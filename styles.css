@@ -1,0 +1,136 @@
+body {
+  font-family: "Titillium Web", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+.device-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  overflow-x: auto;
+}
+.device-buttons button {
+  padding: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 2px solid #0e1178;
+  border-radius: 7%;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+  flex: 1 1 auto;
+  max-width: 200px;
+  box-sizing: border-box;
+  color: #0e1178;
+}
+.device-buttons button.active {
+  /*background-color: #ccc;*/
+  background-color: #0e1178;
+  color: #ffffff;
+}
+.device-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.device-info img {
+  max-width: 300px;
+  height: 190px;
+  margin-top: 10px;
+}
+.device-info h1 {
+  margin: 0;
+  text-align: center;
+}
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navigation-arrows button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.navigation-arrows button::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  border-color: #000;
+  transition: border-color 0.3s;
+}
+#left-arrow::before {
+  transform: rotate(-135deg);
+}
+#right-arrow::before {
+  transform: rotate(45deg);
+}
+.navigation-arrows button:hover::before {
+  border-color: #555;
+}
+@media (max-width: 600px) {
+  .device-buttons button {
+    flex: 0 1 auto;
+    padding: 10px;
+  }
+  .device-info {
+    align-items: center;
+  }
+  .navigation-arrows {
+    top: 50%;
+    transform: translateY(-50%);
+    /*max-width: 100%;*/
+  }
+  #left-arrow {
+    position: absolute;
+    left: 30px;
+  }
+  #right-arrow {
+    position: absolute;
+    right: 30px;
+  }
+}
+@media (min-width: 600px) {
+  .device-info {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    height: 200px;
+    margin-top: 40px;
+  }
+  .device-info h1 {
+    margin: 0;
+    text-align: left;
+  }
+  .navigation-arrows {
+    top: 42%;
+  }
+  #left-arrow {
+    position: absolute;
+    /*left: -193px;*/
+    left: 30px;
+  }
+  #right-arrow {
+    position: absolute;
+    /*right: -180px;*/
+    right: 30px;
+  }
+}
